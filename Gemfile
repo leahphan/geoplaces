@@ -6,6 +6,10 @@ gem 'rails', '4.1.4'
 gem 'figaro', '0.7.0'
 gem 'geocoder', '1.2.4'
 gem 'gmaps4rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
