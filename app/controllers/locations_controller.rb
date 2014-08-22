@@ -9,11 +9,31 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all
     end
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.address
+      marker.picture({
+          "url" => "/pink-pin.png",
+          "width" =>  36,
+          "height" => 36})
+      marker.json({title: location.address})
+    end
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.address
+      marker.picture({
+          "url" => "/pink-pin.png",
+          "width" =>  36,
+          "height" => 36})
+      marker.json({title: location.address})
+    end
   end
 
   # GET /locations/new
