@@ -19,6 +19,9 @@ class LocationsController < ApplicationController
           "height" => 36})
       marker.json({title: location.address})
     end
+  @client = GooglePlaces::Client.new(ENV["API_KEY"])
+  @spots = @client.spots(-33.8670522, 151.1957362, :types => 'restaurant')
+
   end
 
   # GET /locations/1
